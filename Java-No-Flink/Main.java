@@ -1,11 +1,27 @@
+/**
+* <h1>Main</h1>
+* The Main class creates a simulation of users requesting their locations.
+*For now, only 6 users will be "requesting", but this number wil grow infinitely
+*once the final system is implemented.
+*Java Frames will be created for each user. Each frame will have a title
+*containing the user Mac Address, and a label on the frame containing the user 
+*location.
+*
+* @author  Dedrè Olwage
+* @version 1.0
+* @since   3/22/2017
+*/
+
 import java.awt.*;
  import javax.swing.*;
 
 class Main
 {	
 
-
-
+	
+	 /**
+	 *This method will create a new frame (window), with a label.
+	 */
 	 private static JLabel createWindow(String location,String mac) {
  
        //Create and set up the window. 
@@ -60,4 +76,3 @@ class Main
 		}
 }
 }
-
