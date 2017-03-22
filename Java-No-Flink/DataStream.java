@@ -1,3 +1,11 @@
+/**
+* <h1>DataStream</h1>
+* The DataStream class will handle requests from the user by sending it through to the Server.
+*
+* @author  Dedrè Olwage
+* @version 1.0
+* @since   3/22/2017
+*/
 import java.util.*;
 
 
@@ -6,13 +14,10 @@ class DataStream extends Thread
 	private Queue<UserRequest> users = new LinkedList<>();
 	private Server server = new Server();
 
-	public DataStream()
-	{
-
-	}
-
-
-
+	/**
+	 *This method will check the queue for pending requests and then serve them if there are.
+	 *
+	 */
 	 public void check() {
         
 		if(users.isEmpty())
@@ -31,7 +36,10 @@ class DataStream extends Thread
 		
     }
 
-	
+	/**
+	 *This method adds a UserRequest to the queue.
+	 *@param user The UserRequest object to be added to the queue to wait to be served.
+	 */
 	public void addUser(UserRequest user)
 	{
 		users.add(user);
@@ -40,10 +48,6 @@ class DataStream extends Thread
 
 	}
 
-	public void removeUser()
-	{
-		users.remove();
-	}
 
 	
 		
