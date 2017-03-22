@@ -9,7 +9,12 @@
 public class Server
 {
 	private String  userMac;
-
+	
+	public Server()
+	{
+		userMac = new MacAddress().getMacAddress();
+	}
+	
 	/**
 	 *This method will request the users location from the GeoLocation class.
 	 *@param mac The user's Mac Address that will be sent to the GeoLocation class (for future implementaion purposes.)
