@@ -1,3 +1,4 @@
+package cos301;
 
 public class GeoLocation {
 
@@ -21,7 +22,7 @@ public class GeoLocation {
     public void setLon(double lon) {
         this.lon = lon;
     }
-
+    
     public double getLat() {
         return lat;
     }
