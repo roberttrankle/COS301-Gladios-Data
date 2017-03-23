@@ -22,7 +22,9 @@ public class User extends Thread
 	 */
 	public User(DataStream manager)
 	{
-		user = new UserRequest(new MacAddress().getMacAddress());
+		String mac = new MacAddress().getMacAddress();
+		System.out.println("Mac" + " " + mac);
+		user = new UserRequest(mac);
 		Manager = manager;
 		start();
 	}
