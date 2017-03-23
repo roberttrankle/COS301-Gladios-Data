@@ -20,9 +20,9 @@ public class User extends Thread
 	 *This is the constructor method initializing the Mac Address of the user.
 	 *@param mac This parameter contains the Mac address.
 	 */
-	public User(String mac,DataStream manager)
+	public User(DataStream manager)
 	{
-		user = new UserRequest(mac);
+		user = new UserRequest(new MacAddress().getMacAddress());
 		Manager = manager;
 		start();
 	}
