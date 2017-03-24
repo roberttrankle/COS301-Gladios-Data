@@ -14,7 +14,7 @@
 
 import java.awt.*;
  import javax.swing.*;
-
+ import java.util.Random;
 class Main
 {	
 
@@ -31,9 +31,9 @@ class Main
       
        textLabel.setPreferredSize(new Dimension(300, 100)); 
        frame.getContentPane().add(textLabel, BorderLayout.CENTER); 
- 
+		Random random = new Random();
        //Display the window. 
-       frame.setLocationRelativeTo(null); 
+       frame.setLocation(random.nextInt(1000), random.nextInt(1000)); 
        frame.pack();
        frame.setVisible(true); 
 	   return textLabel;
@@ -50,18 +50,18 @@ class Main
 		
 		
 
-		User user1 = new User("01:E2:A3:14:C8:29",datastream);
+		User user1 = new User(datastream);
 		JLabel w1 = createWindow("",user1.user.MacAddress);
-		User user2 = new User("02:E3:A4:15:C9:30",datastream);
-		JLabel w2 = createWindow("",user1.user.MacAddress);
-		User user3 = new User("03:E4:A5:16:C1:31",datastream);
-		JLabel w3 = createWindow("",user1.user.MacAddress);
-		User user4 = new User("04:E5:A6:17:C2:32",datastream);
-		JLabel w4 = createWindow("",user1.user.MacAddress);
-		User user5 = new User("05:E6:A7:18:C3:33",datastream);
-		JLabel w5 = createWindow("",user1.user.MacAddress);
-		User user6 = new User("06:E7:A8:19:C4:34",datastream);
-		JLabel w6 = createWindow("",user1.user.MacAddress);
+		User user2 = new User(datastream);
+		JLabel w2 = createWindow("",user2.user.MacAddress);
+		User user3 = new User(datastream);
+		JLabel w3 = createWindow("",user3.user.MacAddress);
+		User user4 = new User(datastream);
+		JLabel w4 = createWindow("",user4.user.MacAddress);
+		User user5 = new User(datastream);
+		JLabel w5 = createWindow("",user5.user.MacAddress);
+		User user6 = new User(datastream);
+		JLabel w6 = createWindow("",user6.user.MacAddress);
 
 		while(true)
 		{
@@ -76,3 +76,19 @@ class Main
 		}
 }
 }
+
+/*//1. Create the frame.
+		JFrame frame = new JFrame("Get Location");
+
+		//2. Optional: What happens when the frame closes?
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		//3. Create components and put them in the frame.
+		//...create emptyLabel...
+		frame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
+
+		//4. Size the frame.
+		frame.pack();
+
+		//5. Show it.
+		frame.setVisible(true);*/
