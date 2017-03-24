@@ -7,7 +7,7 @@
 * @since   3/22/2017
 */
 import java.util.Random;
-
+import java.util.concurrent.TimeUnit;
 
 
 public class User extends Thread
@@ -42,7 +42,7 @@ public class User extends Thread
 		boolean val = random.nextBoolean();
 		int counter = 0;
 
-		while(counter < 10) //check if the user wants to get location (10 times, in real world it would run infinitely)
+		while(counter < 1000) //check if the user wants to get location (10 times, in real world it would run infinitely)
 		{
 		//System.out.println("here");
 			user.viewLocation = val;
@@ -52,6 +52,11 @@ public class User extends Thread
 
 			val = random.nextBoolean();
 			counter++;
+			try {
+				Thread.sleep(1000);
+			} catch(InterruptedException ex) {
+				Thread.currentThread().interrupt();
+			}
 		}
 	 }
 
