@@ -4,7 +4,7 @@
 *such as a Mac Address and a boolean value indicating whether the user wants to 
 *get their current location or not.
 *
-* @author  Dedrè Olwage
+* @author  Dedrè Olwage, Kenneth Mangwane
 * @version 1.0
 * @since   3/22/2017
 */
