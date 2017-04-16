@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  * @author rob,dedre
  */
 public class Data {
-    public static void main(String[] args) throws Exception 
+    public static void main(String[] args) throws Exception //doesn't this need to be the condtructor for Data in stead of a main? -- check **
     {
         //the execution environment
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
@@ -39,7 +39,7 @@ public class Data {
 	//get the location string from the above textfile and return a location object
 	//not sure where to place return, assuming after the connect
 
-	return getLocation("test.txt");
+	return getLocation("test.txt"); // ** - cannot return something from main?
     }
 
     private static class Mapper implements MapFunction<String, String> 
@@ -97,7 +97,7 @@ public class Data {
       //a location object.
       //TO DO - format the data to read into variables that can be used to create a location object
       //Note: not tested yet
-   private Location getLocation(String fileName)
+   private GeoLocation getLocation(String fileName)
    {
 	    BufferedReader br = new BufferedReader(
         new InputStreamReader(new FileInputStream(fileName)));
@@ -112,7 +112,7 @@ public class Data {
   	          br.close();
 	    }
 
-	    Location loc = new Location(latitude,longitude,altitude);
+	    GeoLocation loc = new Location(latitude,longitude,altitude);
 	    return loc;
    }
 }
