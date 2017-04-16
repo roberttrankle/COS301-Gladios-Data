@@ -112,7 +112,7 @@ public class Data {
   	          br.close();
 	    }
 
-	    GeoLocation loc = new Location(latitude,longitude,altitude);
+	    GeoLocation loc = new GeoLocation(latitude,longitude,altitude);
 	    return loc;
    }
 }
