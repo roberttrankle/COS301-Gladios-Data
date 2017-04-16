@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author rob
+ * @author rob,dedre
  */
 public class Data {
     public static void main(String[] args) throws Exception 
@@ -26,14 +26,20 @@ public class Data {
         //the execution environment
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //paramters are the hostname and port
-        DataStream<String> text = env.socketTextStream("localhost", 5555);
+        DataStream<String> text = env.socketTextStream("localhost", 443);
         //transform the data of a JSON object to a string, becuase I assumed thats what we had to do.
         //Even though we have no JSON object to actually test, so I created a fake one.
         text.map(new Mapper()).writeAsText("C:/Users/rob/Documents/NetBeansProjects/COS301/test.txt");
+	
         //Not sure where to place connection, just placed it below for now
         //Used URLConnection from java, instead of flink to connect
         connect("some MAC Address");
         env.execute("Geo-Location Stream");
+
+	//get the location string from the above textfile and return a location object
+	//not sure where to place return, assuming after the connect
+
+	return getLocation("test.txt");
     }
 
     private static class Mapper implements MapFunction<String, String> 
@@ -86,5 +92,27 @@ public class Data {
             Logger.getLogger(Data.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-}
 
+      //Read the test.txt file for the line containing the location details, and use those details to create and return
+      //a location object.
+      //TO DO - format the data to read into variables that can be used to create a location object
+      //Note: not tested yet
+   private Location getLocation(String fileName)
+   {
+	    BufferedReader br = new BufferedReader(
+        new InputStreamReader(new FileInputStream(fileName)));
+	    try {
+   		    String line;
+		    String latitude,longitude,altitude;
+
+  	        while ((line = br.readLine()) != null) {
+       		 // TO DO - process line - to extract longitude value etc and store it in variable..- Greg?
+   	         }
+	    } finally {
+  	          br.close();
+	    }
+
+	    Location loc = new Location(latitude,longitude,altitude);
+	    return loc;
+   }
+}
