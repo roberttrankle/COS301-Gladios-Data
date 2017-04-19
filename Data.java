@@ -13,12 +13,13 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.sling.commons.json.JSONObject;
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author rob,dedre
+ * @author rob,dedre,greg
  */
 public class Data {
     public static void main(String[] args) throws Exception //doesn't this need to be the condtructor for Data in stead of a main? -- check **
@@ -27,19 +28,20 @@ public class Data {
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //paramters are the hostname and port
         DataStream<String> text = env.socketTextStream("localhost", 443);
-        //transform the data of a JSON object to a string, becuase I assumed thats what we had to do.
+        //transform the data of a JSON object to a string, because I assumed that's what we had to do.
         //Even though we have no JSON object to actually test, so I created a fake one.
         text.map(new Mapper()).writeAsText("C:/Users/rob/Documents/NetBeansProjects/COS301/test.txt");
-	
+  
         //Not sure where to place connection, just placed it below for now
         //Used URLConnection from java, instead of flink to connect
         connect("some MAC Address");
         env.execute("Geo-Location Stream");
 
-	//get the location string from the above textfile and return a location object
-	//not sure where to place return, assuming after the connect
+      //get the location string from the above textfile and return a location object
+      //not sure where to place return, assuming after the connect
 
-	return getLocation("test.txt"); // ** - cannot return something from main?
+      return getLocation("test.txt"); // ** - cannot return something from main?
+
     }
 
     private static class Mapper implements MapFunction<String, String> 
@@ -97,22 +99,17 @@ public class Data {
       //a location object.
       //TO DO - format the data to read into variables that can be used to create a location object
       //Note: not tested yet
-   private GeoLocation getLocation(String fileName)
-   {
-	    BufferedReader br = new BufferedReader(
-        new InputStreamReader(new FileInputStream(fileName)));
-	    try {
-   		    String line;
-		    String latitude,longitude,altitude;
+   private GeoLocation getLocation(String fileName) throws FileNotFoundException {
+        double lat = 0;
+        double lon = 0;
 
-  	        while ((line = br.readLine()) != null) {
-       		 // TO DO - process line - to extract longitude value etc and store it in variable..- Greg?
-   	         }
-	    } finally {
-  	          br.close();
-	    }
+       Scanner scan = new Scanner(fileName);
+       while (scan.hasNext()) {
+           // TODO - process line - to extract longitude value etc and store it in variable..- Greg?
+       }
 
-	    GeoLocation loc = new GeoLocation(latitude,longitude,altitude);
-	    return loc;
+
+       GeoLocation loc = new GeoLocation(lat,lon);
+      return loc;
    }
 }
