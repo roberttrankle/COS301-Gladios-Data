@@ -26,6 +26,8 @@ import org.apache.sling.commons.json.JSONObject;
 /**
  *
  * @author ORATILE
+ * @author Robert
+ * @author Tlou
  */
 public class Main {
     
@@ -42,11 +44,21 @@ public class Main {
         //connect("some MAC Address");
         env.execute("Geo-Location Stream");
     }
-
+    
+    /**
+    * A class for Transforming the DataSet into a new DataSet, with a one to one transformation.
+    * @param value The Data to transform into a String.
+    * @return The new string.
+    */
     private static class Mapper implements MapFunction<String, String> 
     {
         
         @Override
+        /**
+        * A Function that implements the Mapper class
+        * @param value The Data to transform into a String.
+        * @return The new string.
+        */
         public String map(String value) throws Exception 
         {
             String str = "";
