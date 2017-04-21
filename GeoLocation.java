@@ -1,3 +1,4 @@
+//package org.myorg.quickstart;
 
 public class GeoLocation {
 
