@@ -1,1 +1,9 @@
 All the files used to create the JAR file.
+
+There is a sample of how to create a DataInterface, in the Main.java file.
+There is also a telnetServer.java which needs to be run before you use our data files,
+
+this is the only way we could implement it to allow us to test.
+
+It is used as the connection with flink, and allows the data to be streamed from that socket. So it is possible for you to
+change the host to your server and port, but you may encounter errors.
