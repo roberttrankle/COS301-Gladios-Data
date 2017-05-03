@@ -1,0 +1,18 @@
+The deliverables due, and divided into sub-teams:
+- Using the high level functional requirements of the NavUp system, create a test
+  model for the various specications of the implementation covering the core functions and innovations implemented.
+  
+            * Robert &  Dedre
+  
+  
+ - Create a list of non-functional requirements tested, then evaluate each of these giving
+    a mark out of 10 and writing comments to justify the mark.
+            
+            * Tlou & Pro
+       
+- Evaluate the test cases of the previous team for non-functional requirements using
+  your own criteria, such as coverage and eciency of their test cases. Give a mark
+  out 10, then write a comment to justify the mark.
+
+
+            *Greg & Kenneth
