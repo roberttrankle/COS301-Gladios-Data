@@ -1,0 +1,34 @@
+
+	\section{Non-functional Requirements}
+		\subsection{Requirements Tested}
+
+			\subsubsection{Performance}
+			\subsubsection{Scalability}
+			\subsubsection{Integrity}
+			\subsubsection{Accessibility}
+			
+	
+			\subsection{Evaluation and Comments}
+
+			%Evaluation table goes here
+			
+			%Comments
+			\subsubsection{Performance}
+			The key functionalities tested with respect to performance were speed, concurrency and response rate. The application doesn't take time to connect to
+			the Aruba server and so does the response rate, that is , the rate between logging in to Aruba server and get the location back.
+			
+			\subsubsection{Scalability}
+			Capability of the system: Smooth or rather fast uniterrupted  server (i.e Aruba) connection, however, the application cannot get all the MAC Addresses of
+			the connected devices. \\
+			The ability to handle multiple users: The application makes use of multiple threads structure to handle multiple user access, so each new device has it's own thread.
+
+			\subsubsection{Integrity}
+			There is no integrity in the application, connection to Aruba server is not authorized. The application sets Aruba SSL validation to false, which provides unauthorized
+			access to Aruba server, and thus there's no integrity in the application.
+
+			\subsubsection{Accessibility}
+			Accessibility testing: The main test was to test/determine whether individuals with disabilities can use the appllication, however, that's in the Access module as the Data
+			module is for data streaming.
+
+			\subsubsection{Security}
+			As already stated, the application sets the SSL certification validation to false, which provides unauthorized and not-so secure access to the Aruba server.
