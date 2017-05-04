@@ -6,11 +6,23 @@
 			\subsubsection{Scalability}
 			\subsubsection{Integrity}
 			\subsubsection{Accessibility}
-			
+			%Tlou will add his stuff also
 	
 			\subsection{Evaluation and Comments}
 
-			%Evaluation table goes here
+\begin{table}[]
+\label{my-label}
+\begin{tabular}{|l|l|l|}
+\hline
+Requirments & Test Case(s) & Evaluation \\ \hline
+Performance & \begin{tabular}[c]{@{}l@{}}-Aruba login: with low connection bandwidth\\ -After login: append invalid MAC address to the URL\\ -Test response rate, provided that the MAC address is valid\end{tabular} & 6 \\ \hline
+Scalability & \begin{tabular}[c]{@{}l@{}}-Test for multiple user access to the application\\ -System throughput with increasing number of users\end{tabular} & 7  \\ \hline
+Integrity   & \begin{tabular}[c]{@{}l@{}}-Login authentication\\ -SSL certificate validation\end{tabular} & 6 \\ \hline
+Integrity   & \begin{tabular}[c]{@{}l@{}}-Aruba login with SSL certificate validation set to true\end{tabular} & 5 \\ \hline
+ \end{tabular}
+\centering
+\caption{Non-functional requirements and Evaluation}
+\end{table}
 			
 			%Comments
 			\subsubsection{Performance}
